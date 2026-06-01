@@ -1,5 +1,298 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/*Стили для основной темы и основной ширины экрана пишите в файле style.css. 
+Ниже в этом же файле вы напишете медиавыражения для адаптива под разные экраны.*/
+
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  
+  background-image: var(--bg-image-page);
+  background-color: var(--bg-color-page);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /*чтобы фон оставался на месте при прокрутке страницы*/
+  margin: 0 auto;
+}
+
+.header {
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  grid-template-rows: 1fr min-content 1fr;
+  /* justify-content: center; */
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  /* padding: 75px 10px 66px; */
+}
+
+.header,
+.footer {
+  padding: 10px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  display: inline-block;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px; /*Подогнать число*/
+}
+
+.decorated-zone::after {
+  content: '';
+  display: inline-block;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.header_decoration {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-style: normal;
+  font-weight: var(--weight-s);
+  font-size: var(--size);
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.header_decoration::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  background-color: var(--accent-color);
+  /* left: 347px;
+  top: 18px; */
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  margin-inline-start: 10px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  list-style: none;
+  padding-right: 8px;
+}
+
+.header__theme-menu-item {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-style: normal;
+  font-weight: var(--weight-s);
+  font-size: var(--size);
+  line-height: 100%;
+  text-align: center;
+  color: var(--accent-color);
+  min-height: 23px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  background-color: transparent;
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  display: inline-block;
+  border-bottom: 1px solid var(--accent-color);
+
+  /* position: absolute;
+  width:04px;
+  height: 1p 1x;
+  left: 699px;
+  top: 147px;
+  color: #FF0070; */
+}
+
+.header__theme-menu-button:active {
+  outline: 1px solid var(--accent-color);
+}
+
+.header_title {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-style: normal;
+  font-weight: var(--weight-l);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  color: #DB00FF;
+  text-shadow: 4px 4px 0px var(--accent-color);
+  align-self: end;
+}
+
+.header_text {
+  color: #000028;
+}
+
+.title-decor {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-style: normal;
+  font-weight: var(--weight-l);
+  font-size: 18px;
+  line-height: 130%;
+  /* or 23px */
+  background-color: var(--accent-color);
+}
+
+.content {
+  padding: 60px 10px 0;
+  background-color: var(--bg-color-page);
+  display: grid;
+  gap: 50px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+
+}
+
+.section_title {
+    font-family: 'IBM Plex Mono', sans-serif;
+  font-style: normal;
+  font-weight: var(--weight-l);
+  font-size: 18px;
+  line-height: 130%; /* or 23px */
+  color: var(--accent-color);
+}
+
+.section_block {
+  display: grid;
+  gap: 10px;
+}
+
+.section_block-title {
+  color: #000028;
+}
+
+.section_block-text {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-style: normal;
+  font-weight: var(--weight-s);
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--text-color);
+}
+
+.section_block-link {
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-style: normal;
+  font-weight: var(--weight-s);
+  font-size: 25px;
+  line-height: 32px; /* identical to box height */
+  color: var(--text-color);
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.section_block-link:hover {
+  /* text-decoration: underline; */
+  border-bottom: 1px solid var(--text-color);
+}
+
+.section_block-link:focus {
+  outline: 1px solid rgba(--text-color);
+}
+
+
+
+
+
+
+
+@media (width >= 760px) {
+  .header,
+  .footer {
+    padding: 20px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px; /*Подогнать число*/
+  }
+
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .header_decoration {
+    right: 30px;
+    top: 20px;
+  }
+
+  .header_title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-left: -20px;
+    /* margin-left: -20px; */
+  }
+  
+  .header_text {
+    justify-self: end;
+    inline-size: 50%;
+  }
+}
+
+@media (width >= 1020px) {
+  .header,
+  .footer {
+    padding: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    padding-right: 0;
+  }
+
+  .header_title {
+    /* font-size: 157px; */
+    /* font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); */ /*почему-то не работает*/
+    /* margin-left: -20px; */
+    /* margin-inline-start: -237px; */
+    /* margin-left: -129px; */
+  }
+  
+  .header_text {  
+    /* justify-self: end;
+    inline-size: 75%; */
+    /* min-width: 89%; */
+    /* margin-inline-end: -216px; */
+
+    max-width: 50%;
+  }
 }

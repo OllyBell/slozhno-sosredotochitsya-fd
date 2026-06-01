@@ -12,6 +12,17 @@ body {
   margin: 0 auto;
 }
 
+.page {
+  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  --bg-image: url('cover-image-dark.png');
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /*чтобы фон оставался на месте при прокрутке страницы*/
+  
+}
+
 h1,
 h2,
 h3,
