@@ -40,8 +40,8 @@
 .decorated-zone::before {
   content: '';
   display: inline-block;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--decorated-color);
+  border-top: 1px solid var(--decorated-color);
   width: 25px;
   height: 24px;
   position: absolute;
@@ -52,8 +52,8 @@
 .decorated-zone::after {
   content: '';
   display: inline-block;
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--decorated-color);
+  border-bottom: 1px solid var(--decorated-color);
   width: 25px;
   height: 24px;
   position: absolute;
@@ -73,6 +73,7 @@
   position: absolute;
   right: 20px;
   top: 10px;
+  display: var(--display-rec);
 }
 
 .header_decoration::after {
@@ -108,7 +109,7 @@
   font-size: var(--size);
   line-height: 100%;
   text-align: center;
-  color: var(--accent-color);
+  color: var(--decorated-color);
   min-height: 23px;
 }
 
@@ -121,13 +122,13 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.4);
+  outline: 1px solid var(--button-outline-hover-color);
 }
 
-.header__theme-menu-button:focus {
+.header__theme-menu-button:focus-visible {
   outline: none;
   display: inline-block;
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decorated-color);
 
   /* position: absolute;
   width:04px;
@@ -137,14 +138,14 @@
   color: #FF0070; */
 }
 
-.header__theme-menu-button:active {
-  outline: 1px solid var(--accent-color);
-}
+/* .header__theme-menu-button:active {
+  outline: 1px solid var(--decorated-color);
+} */
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  margin: 1.5px;
-  border: 1px solid var(--accent-color);
+  /* margin: 1.5px; */
+  border: 1px solid var(--decorated-color);
 }
 
 .header_title {
@@ -153,20 +154,20 @@
   font-weight: var(--weight-l);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
-  color: #DB00FF;
+  color: var(--focuse-color);
   text-shadow: 4px 4px 0px var(--accent-color);
   align-self: end;
 }
 
 .header_text {
-  color: #000028;
+  color: var(--titles-color);
 }
 
 .title-decor {
   font-family: 'IBM Plex Mono', sans-serif;
   font-style: normal;
   font-weight: var(--weight-l);
-  font-size: 18px;
+  font-size: var(--size);
   line-height: 130%;
   /* or 23px */
   background-color: var(--accent-color);
@@ -188,9 +189,9 @@
     font-family: 'IBM Plex Mono', sans-serif;
   font-style: normal;
   font-weight: var(--weight-l);
-  font-size: 18px;
+  font-size: var(--size);
   line-height: 130%; /* or 23px */
-  color: var(--accent-color);
+  color: var(--section_title-color);
 }
 
 .section_block {
@@ -205,14 +206,14 @@
 }
 
 .section_block-title {
-  color: #000028;
+  color: var(--titles-color);
 }
 
 .section_block-text {
   font-family: 'IBM Plex Mono', sans-serif;
   font-style: normal;
   font-weight: var(--weight-s);
-  font-size: 18px;
+  font-size: var(--size);
   line-height: 130%;
   color: var(--text-color);
 }
@@ -244,7 +245,7 @@
 .section_block-title-different {
   font-weight: var(--weight-s);
   font-style: normal;
-  color: var(--bg-color-page);
+  color: var(--titles-color);
 }
 
 .section:last-of-type {
@@ -277,7 +278,8 @@
   font-weight: var(--weight-l);
   font-size: 116px;
   line-height: 82.5%;
-  color: #DB00FF;
+  color: var(--focuse-color);
+  /* color: #DB00FF; */
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
@@ -339,8 +341,6 @@
 
   .section-gallery {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    /* grid-row: 3; */
     grid-auto-flow: dense;
   }
 
@@ -409,7 +409,7 @@
   }
 
   .header_title {
-    /* font-size: 157px; */
+    font-size: 157px;
     /* font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); */ /*почему-то не работает*/
     /* margin-left: -20px; */
     /* margin-inline-start: -237px; */
@@ -436,27 +436,5 @@
   .div_section-what {
     columns: 3;
     display: block;
-  }
-
-  .section_img {
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .grid__image:first-of-type {
-    grid-column: span 2;
-  }
-
-  .grid__image:nth-of-type(2) {
-    grid-row: span 2;
-  }
-
-  .grid__image:nth-of-type(3) {
-    grid-row: span 2;
-  }
-
-  .grid__image:last-of-type {
-    grid-column: span 2;
   }
 }
