@@ -62,7 +62,7 @@
 }
 
 .header_decoration {
-  font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-s);
   font-size: var(--size);
@@ -103,7 +103,7 @@
 }
 
 .header__theme-menu-item {
-  font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-s);
   font-size: var(--size);
@@ -149,7 +149,7 @@
 }
 
 .header_title {
-  font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-l);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -164,7 +164,7 @@
 }
 
 .title-decor {
-  font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-l);
   font-size: var(--size);
@@ -186,7 +186,7 @@
 }
 
 .section_title {
-    font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-l);
   font-size: var(--size);
@@ -216,7 +216,7 @@
 }
 
 .section_block-text {
-  font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-s);
   font-size: var(--size);
@@ -226,7 +226,7 @@
 
 .section_block-link {
   text-decoration: none;
-  font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-s);
   font-size: var(--size);
@@ -283,7 +283,7 @@
 }
 
 .footer_title {
-  font-family: 'IBM Plex Mono', sans-serif;
+  /* font-family: 'IBM Plex Mono', sans-serif; */
   font-style: normal;
   font-weight: var(--weight-l);
   font-size: 116px;
